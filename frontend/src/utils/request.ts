@@ -1,6 +1,9 @@
 import axios from 'axios'
 import type { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
 import { ElMessage } from 'element-plus'
+import { mockRequest } from './mockData'
+
+const USE_MOCK = import.meta.env.VITE_USE_MOCK === 'true' || true
 
 // 创建 axios 实例
 const request: AxiosInstance = axios.create({
@@ -74,18 +77,30 @@ request.interceptors.response.use(
 // 封装请求方法
 export const http = {
   get<T>(url: string, config?: AxiosRequestConfig): Promise<T> {
+    if (USE_MOCK) {
+      return mockRequest(url) as Promise<T>
+    }
     return request.get(url, config)
   },
   
   post<T>(url: string, data?: unknown, config?: AxiosRequestConfig): Promise<T> {
+    if (USE_MOCK) {
+      return mockRequest(url) as Promise<T>
+    }
     return request.post(url, data, config)
   },
   
   put<T>(url: string, data?: unknown, config?: AxiosRequestConfig): Promise<T> {
+    if (USE_MOCK) {
+      return mockRequest(url) as Promise<T>
+    }
     return request.put(url, data, config)
   },
   
   delete<T>(url: string, config?: AxiosRequestConfig): Promise<T> {
+    if (USE_MOCK) {
+      return mockRequest(url) as Promise<T>
+    }
     return request.delete(url, config)
   }
 }

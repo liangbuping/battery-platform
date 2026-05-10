@@ -5,7 +5,7 @@ server:
 
 spring:
   profiles:
-    active: dev
+    active: h2
   application:
     name: battery-platform-backend
   jackson:
