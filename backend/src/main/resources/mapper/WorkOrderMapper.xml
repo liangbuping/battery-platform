@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.battery.platform.mapper.WorkOrderMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.battery.platform.entity.WorkOrder">
+        <id column="id" property="id"/>
+        <result column="order_no" property="orderNo"/>
+        <result column="order_type" property="orderType"/>
+        <result column="title" property="title"/>
+        <result column="description" property="description"/>
+        <result column="vehicle_id" property="vehicleId"/>
+        <result column="vin" property="vin"/>
+        <result column="alert_id" property="alertId"/>
+        <result column="status" property="status"/>
+        <result column="priority" property="priority"/>
+        <result column="assignee" property="assignee"/>
+        <result column="creator" property="creator"/>
+        <result column="create_time" property="createTime"/>
+        <result column="plan_finish_time" property="planFinishTime"/>
+        <result column="actual_finish_time" property="actualFinishTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="deleted" property="deleted"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, order_no, order_type, title, description, vehicle_id, vin, alert_id,
+        status, priority, assignee, creator, create_time, plan_finish_time,
+        actual_finish_time, update_time, deleted
+    </sql>
+
+</mapper>

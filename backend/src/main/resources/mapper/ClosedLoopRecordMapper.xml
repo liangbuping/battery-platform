@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.battery.platform.mapper.ClosedLoopRecordMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.battery.platform.entity.ClosedLoopRecord">
+        <id column="id" property="id"/>
+        <result column="record_no" property="recordNo"/>
+        <result column="vehicle_id" property="vehicleId"/>
+        <result column="vin" property="vin"/>
+        <result column="alert_id" property="alertId"/>
+        <result column="work_order_id" property="workOrderId"/>
+        <result column="loop_type" property="loopType"/>
+        <result column="status" property="status"/>
+        <result column="problem_desc" property="problemDesc"/>
+        <result column="solution" property="solution"/>
+        <result column="result" property="result"/>
+        <result column="verifier" property="verifier"/>
+        <result column="verify_time" property="verifyTime"/>
+        <result column="verify_comment" property="verifyComment"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="deleted" property="deleted"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, record_no, vehicle_id, vin, alert_id, work_order_id, loop_type, status,
+        problem_desc, solution, result, verifier, verify_time, verify_comment,
+        create_time, update_time, deleted
+    </sql>
+
+</mapper>

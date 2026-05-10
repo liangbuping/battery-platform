@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+target/
+
+# Build output
+dist/
+*.jar
+
+# Database
+*.sqlite
+*.db
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Logs
+*.log
+logs/
+
+# Environment
+.env
+.env.local
+*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Maven
+.mvn/
